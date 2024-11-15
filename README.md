@@ -1,2 +1,2 @@
-# waf
+# WAF
 Web Application Framework
