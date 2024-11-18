@@ -1,0 +1,19 @@
+{
+    "name": "bucorel/waf",
+    "description": "Web Application Framework is a lightweight PHP framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bucorel\\Waf\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pushpendra Singh Thakur",
+            "email": "thakurpsr@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
