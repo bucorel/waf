@@ -1,0 +1,21 @@
+{
+    "name": "bucorel/waf",
+    "description": "BUCOREL Web Application Framework",
+    "type": "library",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Bucorel\\Waf\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pushpendra Singh Thakur",
+            "email": "thakurpsr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twig/twig": "4.x-dev"
+    }
+}
