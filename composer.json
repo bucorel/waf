@@ -4,6 +4,7 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
+        "files": ["src/error_handler.php"],
         "psr-4": {
             "Bucorel\\Waf\\": "src/"
         }

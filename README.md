@@ -35,7 +35,6 @@ Web Application Framework is a lightweight PHP framework to create simple MVC we
 ```php
 <?php
 	require_once( 'config.php' );
-	require_once( SYSTEM_PATH.'error_handler.php' );
 	require_once( SYSTEM_PATH.'routes.php' );
 	require_once( SYSTEM_PATH.'vendor/autoload.php' );
 	
