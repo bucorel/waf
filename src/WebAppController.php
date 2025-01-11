@@ -182,5 +182,34 @@
 			$this->appendData( $a );
 		}
 
+		function alignDrawer( $targetElementId, $alignment='c' ){
+			$a = array(
+				'_typ'=>'adrawer',
+				'_tar'=>$targetElementId,
+				'_dat'=>$alignment
+			);
+
+			$this->appendData( $a );
+		}
+
+		function changeImage( $imageId, $sourceUrl ){
+			$a = array(
+				'_typ'=>'cimage',
+				'_tar'=>$targetElementId,
+				'_dat'=>$sourceUrl
+			);
+
+			$this->appendData( $a );
+		}
+
+		function changeBackgroundImage( $imageId, $sourceUrl ){
+			$a = array(
+				'_typ'=>'cbimage',
+				'_tar'=>$targetElementId,
+				'_dat'=>$sourceUrl
+			);
+
+			$this->appendData( $a );
+		}
     }
 ?>
