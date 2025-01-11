@@ -83,10 +83,10 @@
         }
 
         /** Template Controls */
-        function renderTheme( string $themeName ) : string {
+        function renderTheme( string $themeName, array $data = array() ) : string {
 			$path = SYSTEM_PATH.'assets/templates/themes/'.$themeName.'/';
 			$template ='index.html';
-            return $this->renderTemplate( $path, $template );
+            return $this->renderTemplate( $path, $template, $data );
         }
 
         function renderUi( $module, $uiTemplate, array $data=array() ){
