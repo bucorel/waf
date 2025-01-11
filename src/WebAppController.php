@@ -5,6 +5,7 @@
      */
 
     namespace Bucorel\Waf;
+	use \Bucorel\Waf\Location\IpLocation;
 
     class WebAppController extends RequestHandler{
 
@@ -15,6 +16,7 @@
 			$this->initSession();
 			$this->initLanguage();
 			$this->checkAuthentication();
+			$this->initLocation();
         }
 
 		function initSession(){
@@ -58,6 +60,22 @@
 
             $this->showError( self::HTTP_STATUS_UNAUTHORIZED, 'Unauthorized' );
         }
+
+		function initLocation(){
+			if( isset( $_SESSION['location'] ) ){
+				$ip = IpLocation::getIp();
+				if( IpLocation::isPublicIp( $ip ) == false ){
+					return;
+				}
+
+				if( $_SESSION['location']['query'] == $ip ){
+					return;
+				}
+			}
+
+			$location = new IpLocation();
+			$_SESSION['location'] = $location->fetch();
+		}
 
         /** in a WebAppController, GET method always loads theme */
         function handleGetRequest(){
