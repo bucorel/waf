@@ -195,7 +195,7 @@
 		function changeImage( $imageId, $sourceUrl ){
 			$a = array(
 				'_typ'=>'cimage',
-				'_tar'=>$targetElementId,
+				'_tar'=>$imageId,
 				'_dat'=>$sourceUrl
 			);
 
@@ -205,7 +205,7 @@
 		function changeBackgroundImage( $imageId, $sourceUrl ){
 			$a = array(
 				'_typ'=>'cbimage',
-				'_tar'=>$targetElementId,
+				'_tar'=>$imageId,
 				'_dat'=>$sourceUrl
 			);
 
