@@ -211,5 +211,14 @@
 
 			$this->appendData( $a );
 		}
+
+		function resetCaptcha( $targetElementId ){
+			$a = array(
+				'_typ'=>'rcaptcha',
+				'_tar'=>$targetElementId
+			);
+
+			$this->appendData( $a );
+		}
     }
 ?>
