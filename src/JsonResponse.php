@@ -53,7 +53,7 @@
         }
 
 		function showData( array $data ){
-			$this->data = $data;
+			$this->data['_dat'] = $data;
 			$this->finish();
 		}
 		
