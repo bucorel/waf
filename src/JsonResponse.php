@@ -52,6 +52,11 @@
             array_push( $this->data[ '_dat' ], $row );
         }
 
+		function showData( array $data ){
+			$this->data = $data;
+			$this->finish();
+		}
+		
         /** Tts - time taken by the server */
         function getTts() : string {
             return number_format( (microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ]), 3 );
