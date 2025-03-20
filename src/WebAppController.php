@@ -132,14 +132,15 @@
 			$this->appendData( $a );
 		}
 
-		function showPanel( $type, $id, $content, $closeBtn=1, $fallBackUrl="" ){
+		function showPanel( $type, $id, $content, $closeBtn=1, $title="", $fallBackUrl="" ){
 			$a = array(
 				'_typ'=>'panel',
 				'_pty'=>$type,
 				'_tar'=>$id,
 				'_cbt'=>$closeBtn,
 				'_dat'=>$content,
-				'_fbu'=>$fallBackUrl
+				'_fbu'=>$fallBackUrl,
+				'_tit'=>$title
 			);
 
 			$this->appendData( $a );
