@@ -191,9 +191,9 @@ class JsonResponse{
 		$this->finish();
 	}
 
-	public static function showFatalError( string $message, array $debugInfo=array() ):void{
+	public static function showFatalError( string $message, array $debugInfo=array(), int $httpStatusCode = 500 ):void{
 		$jr = new JsonResponse();
-		$jr->setStatus( self::STATUS_INTERNAL_ERROR );
+		$jr->setStatus( $httpStatusCode );
 		$jr->setMessage( $message );
 		$jr->addMeta( '_debug', $debugInfo );
 		$jr->finish();
