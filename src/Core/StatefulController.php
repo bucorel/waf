@@ -20,6 +20,12 @@ class StatefulController extends BaseController{
      * @var Langpack|null $lang Language pack instance for retrieving localized strings.
      */
     protected $lang = null;
+    
+    
+    /**
+     * @var TemplateHandler|null $templateHandler TemplateHandler instance for rendering templates.
+     */
+    protected $templateHandler = null;
 
     /**
      * Includes the UiControls trait to add helper methods for controlling the client-side UI.
@@ -38,6 +44,10 @@ class StatefulController extends BaseController{
         $this->config = $config;
         $this->initLanguage();
         $this->checkRole();
+        $this->initTemplateHandler( 
+        	PathUtil::getTemplatePath( $config['SYSTEM_PATH'] ), 
+        	$_SESSION['language'] 
+        );
     }
 
     /**
@@ -102,5 +112,9 @@ class StatefulController extends BaseController{
         $this->setStatus( self::STATUS_UNAUTHORIZED );
         $this->setMessage( 'Unauthorized' );
         $this->finish();
+    }
+    
+    function initTemplateHandler( string $templatePath, string $language = 'en' ){
+    	$this->templateHandler = new TemplateHandler( $templatePath, $language );
     }
 }
