@@ -118,6 +118,20 @@ trait UiControls{
         $this->appendData( $a );
     }
     
+    
+    /**
+     * Activates a specific drawer, potentially triggering selection of the corresponding drawer.
+     * * @param string $drawerId The ID of the drawer element to select/activate.
+     * @return void
+     */
+    function selectDrawer( string $drawerId ): void{
+        $a = array(
+            '_typ'=>'seldra',
+            '_tar'=>$drawerId
+        );
+        
+        $this->appendData( $a );
+    }
     /**
      * Instructs the client to initialize or update a map view.
      * * @param float $lat The latitude for the map center (default: 23.316633).
